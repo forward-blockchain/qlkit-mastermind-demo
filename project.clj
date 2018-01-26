@@ -31,10 +31,9 @@
                {:id "pages"
                 :source-paths ["src"]
                 :compiler {:main qlkit-mastermind-demo.core
-                           ;:asset-path "js/compiled/out"
                            :output-to "docs/js/compiled/qlkit_mastermind_demo.js"
-                           ;:source-map-timestamp true
-                           :optimizations :simple}}
+                           :output-dir "target/pages-compile"
+                           :optimizations :simple}}               
                {:id "min"
                 :source-paths ["src"]
                 :compiler {:output-to "resources/public/js/compiled/qlkit_mastermind_demo.js"
