@@ -1,6 +1,6 @@
 # qlkit-mastermind-demo
 
-This is a demo of using qlkit to create a [MasterMind](https://en.wikipedia.org/wiki/Mastermind_(board_game)) game. [Try a live version here](https://forward-blockchain.github.io/qlkit-mastermind-demo/index.html)
+This is a demo of using qlkit to create a [Mastermind](https://en.wikipedia.org/wiki/Mastermind_(board_game)) game. [Try a live version here](https://forward-blockchain.github.io/qlkit-mastermind-demo/index.html)
 
 Please read the [recommended qlkit introductory article](https://medium.com/p/79b7b118ddac) to learn more.
 
