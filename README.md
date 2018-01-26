@@ -1,10 +1,8 @@
 # qlkit-mastermind-demo
 
+This is a demo of using qlkit to create a MasterMind game. [https://forward-blockchain.github.io/qlkit-mastermind-demo/index.html](Try a live version here)
 
-
-## Overview
-
-FIXME: Write a paragraph about the library/project and highlight its goals.
+Please read the [https://medium.com/p/79b7b118ddac](recommended qlkit introductory article) to learn more.
 
 ## Setup
 
