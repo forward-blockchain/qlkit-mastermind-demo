@@ -203,6 +203,10 @@
              #(do [HintedRow %])
              (reverse rows)))]))
 
+;; --------------------------------------
+;; Winning Star Display
+;; --------------------------------------
+
 (def rand-star-colors (repeatedly
                        #(rand-nth '[blue200 green200 red200 yellow200 purple200 orange200])))
 
@@ -230,7 +234,7 @@
   (render [{:keys [:master/matched :master/secret-row :master/rows] :as res} state]
           [:div {:style {:width "200px"
                          :margin "auto"
-                         :margin-top "1em"
+                         :marginTop "1em"
                          :position "relative"}}
            (when matched
              [Winning])
@@ -246,7 +250,7 @@
             [GuessingRows res]]
            [:raised-button {:on-click (fn [_] (qlr/transact! [:master/reset!]))
                             :full-width true
-                            :style {:margin-top "1em"}} "RESET"]]))
+                            :style {:marginTop "1em"}} "RESET"]]))
 
 #_(prn :secret (:master/secret-row @app-state))
 
