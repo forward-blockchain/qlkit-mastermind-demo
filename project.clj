@@ -28,6 +28,13 @@
                            :output-dir "resources/public/js/compiled/out"
                            :source-map-timestamp true
                            :preloads [devtools.preload]}}
+               {:id "pages"
+                :source-paths ["src"]
+                :compiler {:main qlkit-mastermind-demo.core
+                           ;:asset-path "js/compiled/out"
+                           :output-to "docs/js/compiled/qlkit_mastermind_demo.js"
+                           ;:source-map-timestamp true
+                           :optimizations :simple}}
                {:id "min"
                 :source-paths ["src"]
                 :compiler {:output-to "resources/public/js/compiled/qlkit_mastermind_demo.js"
@@ -43,4 +50,5 @@
                    :source-paths ["src" "dev"]
                    :repl-options {:nrepl-middleware [cemerick.piggieback/wrap-cljs-repl]}
                    :clean-targets ^{:protect false} ["resources/public/js/compiled"
+                                                     "doc/js/compiled"
                                                      :target-path]}})

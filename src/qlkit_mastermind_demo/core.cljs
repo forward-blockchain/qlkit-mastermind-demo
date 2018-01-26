@@ -209,7 +209,7 @@
 (def rand-star-positions (repeatedly #(vector (rand-int 500) (rand-int 400))))
 
 (defcomponent Winning
-  (render [_ state]
+  (render [_ _]
           [:div {:position "absolute"}
            (take 200
                  (map-indexed
@@ -230,6 +230,7 @@
   (render [{:keys [:master/matched :master/secret-row :master/rows] :as res} state]
           [:div {:style {:width "200px"
                          :margin "auto"
+                         :margin-top "1em"
                          :position "relative"}}
            (when matched
              [Winning])
