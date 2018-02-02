@@ -116,10 +116,9 @@
                :style {:backgroundColor (or background-color "#fff")}}
    (map-indexed
     #(do [:grid-tile
-          (cond-> {}
-            on-click
-            (assoc :on-click
-                   (fn [e] (on-click e %1))))
+          (when on-click
+            {:cursor :pointer
+             :on-click (fn [e] (on-click e %1))})
           (board-piece %2)])
     peice-colors)])
 
@@ -170,12 +169,17 @@
                     {:pos i
                      :element (.-currentTarget e)}))})
            [:popover {:open (boolean (:pos popover))
+                      :anchor-origin {:horizontal :middle :vertical :top}
+                      :target-origin {:horizontal :middle :vertical :bottom}
                       :anchorEl (:element popover)
                       :onRequestClose
                       #(qlr/update-state! dissoc :popover)}
-            [:div (map
+            [:menu (map
                    #(do [:div
-                         {:on-click
+                         {:display         :flex
+                          :justify-content :center
+                          :cursor          :pointer
+                          :on-click
                           (fn [_]
                             (qlr/update-state! dissoc :popover)
                             (qlr/transact!
