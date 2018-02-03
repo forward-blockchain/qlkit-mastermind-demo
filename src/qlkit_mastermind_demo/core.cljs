@@ -9,7 +9,10 @@
 (mat-ui/enable-material-ui!)
 
 (defn mat-color [col]
-  (gobj/get js/MaterialUIStyles.colors (name col)))
+  (-> js/window
+      (aget "MaterialUIStyles")
+      (aget "colors")
+      (aget (name col))))
 
 (def colors '[blue500 green500 red500 yellow500 purple500 orange500])
 
